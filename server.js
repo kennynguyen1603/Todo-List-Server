@@ -11,9 +11,10 @@ await mongoose.connect(process.env.DATABASE_URL);
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "http://your-client-domain.com",
   })
 );
+
 app.use(
   session({
     secret: process.env.SESSION_SECRET || "mySessionSecret",
