@@ -14,6 +14,12 @@ rootRouterV1.use(
   })
 );
 
+rootRouterV1.get("", (req, res) => {
+  res.send({
+    message: "Hello",
+  });
+});
+
 rootRouterV1.use("/users", UserRouter);
 rootRouterV1.use("/auth", AuthRouter);
 rootRouterV1.use("/todos", TodoRouter);
